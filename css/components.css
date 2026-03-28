@@ -1,0 +1,571 @@
+/* ============================================
+   BeautiPhi Medispa — Components
+   Global UI Components
+   ============================================ */
+
+@import url('design-tokens.css');
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4) var(--space-8);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  min-height: 48px;
+}
+
+.btn-primary {
+  background-color: var(--color-text-primary);
+  color: var(--color-text-light);
+  border-color: var(--color-text-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-plum-dark);
+  border-color: var(--color-accent-plum-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border-color: var(--color-text-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-text-primary);
+  color: var(--color-text-light);
+  transform: translateY(-2px);
+}
+
+.btn-accent {
+  background-color: var(--color-accent-plum);
+  color: var(--color-text-light);
+  border-color: var(--color-accent-plum);
+}
+
+.btn-accent:hover {
+  background-color: var(--color-accent-plum-dark);
+  border-color: var(--color-accent-plum-dark);
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  background-color: var(--color-gold);
+  color: var(--color-text-light);
+  border-color: var(--color-gold);
+}
+
+.btn-gold:hover {
+  background-color: #C49F2E;
+  border-color: #C49F2E;
+  transform: translateY(-2px);
+}
+
+.btn-lg {
+  padding: var(--space-5) var(--space-10);
+  font-size: var(--text-base);
+  min-height: 56px;
+}
+
+.btn-sm {
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--text-xs);
+  min-height: 40px;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+
+.card {
+  background-color: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.card-hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  background-color: var(--color-bg-secondary);
+}
+
+.card-image-portrait {
+  height: 400px;
+}
+
+.card-image-square {
+  height: 300px;
+  aspect-ratio: 1;
+}
+
+.card-content {
+  padding: var(--space-6);
+}
+
+.card-title {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-3);
+  font-family: var(--font-heading);
+}
+
+.card-excerpt {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-4);
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.card-link::after {
+  content: '→';
+  transition: transform var(--transition-fast);
+}
+
+.card-link:hover::after {
+  transform: translateX(4px);
+}
+
+/* ============================================
+   SECTION DIVIDERS (Moroccan Arch Influence)
+   ============================================ */
+
+.divider-arch {
+  position: relative;
+  height: 60px;
+  background-color: var(--color-bg-primary);
+  overflow: hidden;
+}
+
+.divider-arch::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 80px;
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-arch);
+}
+
+.divider-arch-inverse {
+  position: relative;
+  height: 60px;
+  background-color: var(--color-bg-secondary);
+  overflow: hidden;
+}
+
+.divider-arch-inverse::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 80px;
+  background-color: var(--color-bg-primary);
+  border-radius: 0 0 150px 150px;
+}
+
+/* Geometric Pattern Divider */
+.divider-geometric {
+  height: 40px;
+  background-image: 
+    linear-gradient(30deg, var(--color-border) 1px, transparent 1px),
+    linear-gradient(-30deg, var(--color-border) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0;
+  opacity: 0.3;
+}
+
+/* ============================================
+   FORMS
+   ============================================ */
+
+.form-group {
+  margin-bottom: var(--space-6);
+}
+
+.form-label {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-accent-plum);
+  box-shadow: 0 0 0 3px rgba(184, 169, 201, 0.2);
+}
+
+.form-textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-error {
+  border-color: var(--color-error);
+}
+
+.form-error-message {
+  font-size: var(--text-sm);
+  color: var(--color-error);
+  margin-top: var(--space-2);
+}
+
+/* ============================================
+   ACCORDION (FAQ)
+   ============================================ */
+
+.accordion {
+  border-top: 1px solid var(--color-border);
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-6) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  color: var(--color-text-primary);
+  transition: color var(--transition-fast);
+}
+
+.accordion-trigger:hover {
+  color: var(--color-accent-plum-dark);
+}
+
+.accordion-icon {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  flex-shrink: 0;
+  margin-left: var(--space-4);
+}
+
+.accordion-icon::before,
+.accordion-icon::after {
+  content: '';
+  position: absolute;
+  background-color: var(--color-text-primary);
+  transition: transform var(--transition-base);
+}
+
+.accordion-icon::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  transform: translateY(-50%);
+}
+
+.accordion-icon::after {
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.accordion-item.active .accordion-icon::after {
+  transform: translateX(-50%) rotate(90deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-slow);
+}
+
+.accordion-content-inner {
+  padding-bottom: var(--space-6);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 500px;
+}
+
+/* ============================================
+   BADGES & TAGS
+   ============================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  border-radius: var(--radius-full);
+}
+
+.badge-primary {
+  background-color: var(--color-accent-lilac);
+  color: var(--color-text-primary);
+}
+
+.badge-gold {
+  background-color: var(--color-gold);
+  color: var(--color-text-light);
+}
+
+/* ============================================
+   LOGO STRIP
+   ============================================ */
+
+.logo-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-12) 0;
+  opacity: 0.6;
+}
+
+.logo-strip-item {
+  height: 40px;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all var(--transition-base);
+}
+
+.logo-strip-item:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* ============================================
+   BREADCRUMBS
+   ============================================ */
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  padding: var(--space-6) 0;
+}
+
+.breadcrumbs-link {
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.breadcrumbs-link:hover {
+  color: var(--color-accent-plum-dark);
+}
+
+.breadcrumbs-separator {
+  color: var(--color-border);
+}
+
+.breadcrumbs-current {
+  color: var(--color-text-primary);
+  font-weight: var(--font-medium);
+}
+
+/* ============================================
+   LOADING STATES
+   ============================================ */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-secondary) 25%,
+    var(--color-bg-tertiary) 50%,
+    var(--color-bg-secondary) 75%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ============================================
+   ANIMATIONS (Fade In on Scroll)
+   ============================================ */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-slower), transform var(--transition-slower);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   PRICE TABLE
+   ============================================ */
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.price-row {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.price-row:last-child {
+  border-bottom: none;
+}
+
+.price-cell {
+  padding: var(--space-4) 0;
+  vertical-align: middle;
+}
+
+.price-name {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  color: var(--color-text-primary);
+}
+
+.price-description {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.price-amount {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  color: var(--color-text-primary);
+  text-align: right;
+}
+
+/* ============================================
+   IMAGE PLACEHOLDER STYLES
+   ============================================ */
+
+.image-placeholder {
+  background-color: var(--color-bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.image-placeholder-hero {
+  height: 600px;
+  background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-accent-lilac) 100%);
+}
+
+.image-placeholder-card {
+  height: 300px;
+  background: linear-gradient(135deg, var(--color-bg-tertiary) 0%, var(--color-bg-secondary) 100%);
+}
+
+/* ============================================
+   NAVIGATION ARROWS
+   ============================================ */
+
+.nav-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-primary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.nav-arrow:hover {
+  border-color: var(--color-text-primary);
+  background-color: var(--color-text-primary);
+  color: var(--color-text-light);
+}
+
+.nav-arrow-prev {
+  transform: rotate(180deg);
+}

@@ -1,0 +1,3 @@
+(css/components.css, css/design-tokens.css, css/header-footer.css, css/layouts.css, index.html, js/main.js)
+
+Added files are all source code and CSS files, which should not be ignored according to rule 7. No build artifacts, dependencies, or temporary files are present in the changes, so per rule 6, output nothing.

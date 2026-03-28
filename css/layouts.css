@@ -1,0 +1,746 @@
+/* ============================================
+   BeautiPhi Medispa — Page Layouts
+   Home, Category, Treatment, Contact Pages
+   ============================================ */
+
+@import url('design-tokens.css');
+
+/* ============================================
+   HERO SECTIONS
+   ============================================ */
+
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+}
+
+.hero-title {
+  font-size: var(--text-6xl);
+  margin-bottom: var(--space-6);
+  line-height: var(--leading-snug);
+}
+
+.hero-subtitle {
+  font-size: var(--text-xl);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+  line-height: var(--leading-relaxed);
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-full {
+  min-height: 90vh;
+}
+
+.hero-full .hero-content {
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================
+   HOME PAGE SECTIONS
+   ============================================ */
+
+/* Intro Section */
+.intro-section {
+  padding: var(--space-24) 0;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.intro-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.intro-content h2 {
+  margin-bottom: var(--space-6);
+}
+
+.intro-text {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+}
+
+/* Categories Grid */
+.categories-section {
+  padding: var(--space-20) 0;
+  background-color: var(--color-bg-tertiary);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--space-16);
+}
+
+.section-title {
+  font-size: var(--text-4xl);
+  margin-bottom: var(--space-4);
+}
+
+.section-subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+.category-card {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+}
+
+.category-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.category-card:hover .category-card-image {
+  transform: scale(1.05);
+}
+
+.category-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(26, 26, 26, 0.8) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-6);
+}
+
+.category-card-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  color: var(--color-text-light);
+  margin-bottom: var(--space-2);
+}
+
+.category-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* Featured Treatments */
+.featured-section {
+  padding: var(--space-24) 0;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+/* Trust Section */
+.trust-section {
+  padding: var(--space-16) 0;
+  background-color: var(--color-bg-secondary);
+}
+
+/* Lead Gen Section */
+.lead-gen-section {
+  padding: var(--space-24) 0;
+  background: linear-gradient(135deg, var(--color-accent-lilac) 0%, var(--color-accent-plum) 100%);
+  text-align: center;
+}
+
+.lead-gen-content {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lead-gen-title {
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+}
+
+.lead-gen-text {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+}
+
+/* ============================================
+   CATEGORY PAGE
+   ============================================ */
+
+.category-page-hero {
+  padding: var(--space-20) 0;
+  text-align: center;
+  background-color: var(--color-bg-tertiary);
+}
+
+.category-page-title {
+  font-size: var(--text-5xl);
+  margin-bottom: var(--space-6);
+}
+
+.category-page-intro {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.category-listing {
+  padding: var(--space-20) 0;
+}
+
+.treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+.concern-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+.concern-card {
+  text-align: center;
+  padding: var(--space-8);
+  background-color: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.concern-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.concern-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-4);
+  background-color: var(--color-accent-lilac);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.concern-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-3);
+}
+
+.concern-excerpt {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* Cross-linking Section */
+.cross-link-section {
+  padding: var(--space-16) 0;
+  background-color: var(--color-bg-tertiary);
+}
+
+.cross-link-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+}
+
+/* ============================================
+   TREATMENT PAGE TEMPLATE
+   ============================================ */
+
+.treatment-page {
+  padding-top: var(--space-12);
+}
+
+.treatment-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+  padding: var(--space-12) 0;
+}
+
+.treatment-hero-content h1 {
+  font-size: var(--text-5xl);
+  margin-bottom: var(--space-4);
+}
+
+.treatment-hero-benefit {
+  font-size: var(--text-xl);
+  color: var(--color-accent-plum-dark);
+  margin-bottom: var(--space-8);
+  font-family: var(--font-heading);
+}
+
+.treatment-hero-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.treatment-section {
+  padding: var(--space-16) 0;
+}
+
+.treatment-overview {
+  max-width: 720px;
+}
+
+.treatment-overview p {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+}
+
+.treatment-benefits {
+  background-color: var(--color-bg-tertiary);
+}
+
+.benefits-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-12);
+}
+
+.benefit-item {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.benefit-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: var(--color-gold);
+}
+
+.benefit-text {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+}
+
+.before-after-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+.before-after-card {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.before-after-label {
+  position: absolute;
+  bottom: var(--space-4);
+  left: var(--space-4);
+  background-color: var(--color-text-primary);
+  color: var(--color-text-light);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  border-radius: var(--radius-sm);
+}
+
+.treatment-video {
+  padding: var(--space-16) 0;
+  background-color: var(--color-bg-secondary);
+}
+
+.video-placeholder {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, var(--color-bg-tertiary) 0%, var(--color-accent-lilac) 100%);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+}
+
+.treatment-pricing {
+  padding: var(--space-16) 0;
+}
+
+.pricing-container {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.treatment-faq {
+  padding: var(--space-16) 0;
+  background-color: var(--color-bg-tertiary);
+}
+
+.faq-container {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.related-concerns {
+  padding: var(--space-16) 0;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-bg-primary);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-4) 0;
+  z-index: var(--z-sticky);
+  box-shadow: var(--shadow-lg);
+}
+
+.sticky-cta-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sticky-cta-text {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  color: var(--color-text-primary);
+}
+
+/* ============================================
+   CONTACT PAGE
+   ============================================ */
+
+.contact-page {
+  padding: var(--space-12) 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+}
+
+.contact-form-container {
+  background-color: var(--color-bg-tertiary);
+  padding: var(--space-10);
+  border-radius: var(--radius-lg);
+}
+
+.contact-info-block {
+  margin-bottom: var(--space-10);
+}
+
+.contact-info-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-6);
+}
+
+.contact-detail {
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+}
+
+.contact-detail-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: var(--color-gold);
+}
+
+.opening-hours {
+  margin-top: var(--space-10);
+}
+
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hours-row {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hours-cell {
+  padding: var(--space-4) 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.hours-cell:last-child {
+  text-align: right;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-accent-lilac) 100%);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  margin-top: var(--space-10);
+}
+
+/* ============================================
+   BLOG / JOURNAL
+   ============================================ */
+
+.blog-page {
+  padding: var(--space-12) 0;
+}
+
+.blog-hero {
+  padding: var(--space-16) 0;
+  text-align: center;
+  background-color: var(--color-bg-tertiary);
+  margin-bottom: var(--space-12);
+}
+
+.blog-title {
+  font-size: var(--text-5xl);
+  margin-bottom: var(--space-4);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+}
+
+.blog-post-card {
+  background-color: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.blog-post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.blog-post-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.blog-post-content {
+  padding: var(--space-6);
+}
+
+.blog-post-category {
+  font-size: var(--text-xs);
+  color: var(--color-accent-plum-dark);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  margin-bottom: var(--space-3);
+}
+
+.blog-post-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-3);
+  line-height: var(--leading-snug);
+}
+
+.blog-post-excerpt {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-4);
+}
+
+.blog-post-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* Single Blog Post */
+.single-post {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: var(--space-12) 0;
+}
+
+.single-post-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-10);
+}
+
+.single-post-content {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+}
+
+.single-post-content p {
+  margin-bottom: var(--space-6);
+}
+
+.single-post-content h2 {
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-6);
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: var(--text-5xl);
+  }
+
+  .intro-grid,
+  .treatment-hero,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .intro-image {
+    order: -1;
+    height: 400px;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured-grid,
+  .treatment-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 60vh;
+  }
+
+  .hero-title {
+    font-size: var(--text-4xl);
+  }
+
+  .hero-image {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    order: -1;
+  }
+
+  .hero-content {
+    padding-top: var(--space-8);
+  }
+
+  .categories-grid,
+  .concern-grid,
+  .featured-grid,
+  .treatment-grid,
+  .blog-grid,
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits-list {
+    grid-template-columns: 1fr;
+  }
+
+  .before-after-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .cross-link-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sticky-cta-text {
+    display: none;
+  }
+
+  .sticky-cta-inner {
+    justify-content: center;
+  }
+}
