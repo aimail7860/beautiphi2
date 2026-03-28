@@ -1,3 +1,29 @@
-(css/components.css, css/design-tokens.css, css/header-footer.css, css/layouts.css, index.html, js/main.js)
+# Compiled and build artifacts
+*.pyc
+__pycache__/
+*.o
+*.obj
+dist/
+build/
 
-Added files are all source code and CSS files, which should not be ignored according to rule 7. No build artifacts, dependencies, or temporary files are present in the changes, so per rule 6, output nothing.
+# Dependencies
+.venv/
+venv/
+node_modules/
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Environment
+.env
+.env.local
+.env.*
+
+# Editors
+.vscode/
+.idea/
+
+# Original rules preserved
+*.log
